@@ -1,0 +1,16 @@
+version: '3'
+services:
+  data:
+    container_name: rfd
+    restart: always
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    ports:
+      - "86:80"
+    tty: true
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
